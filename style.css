@@ -1,0 +1,109 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #D8BFD8;
+  font-family: sans-serif;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column; /* Joga um embaixo do outro ou deixa lado a lado bonitinho */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 20px; /* Dá um respiro legal entre o input e o botão */
+}
+
+#buscar {
+  height: 60px;
+  width: 400px; /* Aumentei bem para ficar confortável de digitar */
+  padding: 0 20px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 25px 50px 50px 0px;
+  border-style: solid;
+  border-color: #4b0082;
+  border-width: 2px 0px 0px 3px; 
+  outline: none;
+  background-color: #fff;
+}
+
+#button {
+  user-select: none;
+  background-color: #b861b8;
+  color: #ffffff;
+  padding: 15px 30px; /* Botão mais parrudo */
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  border: 3px solid #4b0082;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#button:hover {
+  background-color: #9c529c;
+  transform: scale(1.05); /* Um efeitinho leve de zoom */
+}
+
+/* Contêiner principal do player e chat */
+.twitch {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Truque de proporção 16:9 para o vídeo */
+.twitch .twitch-video {
+  padding-top: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.twitch .twitch-video iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+}
+
+/* Estilo padrão do chat (fica abaixo do vídeo em telas menores) */
+.twitch .twitch-chat {
+  height: 400px;
+  margin-top: 10px;
+}
+
+.twitch .twitch-chat iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+/* Media Query: telas maiores (vídeo na esquerda, chat na direita) */
+@media screen and (min-width: 850px) {
+  .twitch {
+    position: relative;
+  }
+  
+  .twitch .twitch-video {
+    width: 75%;
+    padding-top: 42.1875%; /* Ajusta a proporção 16:9 considerando os 75% da largura */
+  }
+  
+  .twitch .twitch-chat {
+    width: 24%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 0;
+  }
+}
