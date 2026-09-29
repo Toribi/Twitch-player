@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pen</title>
+  </head>
+  <body>
+
+    <div class="menu">
+      <input id="buscar" type="text" placeholder="Escreva o nome do streamer">
+      <button id="button">Enviar</button>
+    </div>
+
+    <div class="twitch">
+  <div class="twitch-video">
+    <iframe 
+      src="https://player.twitch.tv/?channel=NOME_DO_STREAMER&parent=localhost" 
+      frameborder="0" 
+      scrolling="no" 
+      allowfullscreen="true">
+    </iframe>
+  </div>
+  <div class="twitch-chat">
+    <iframe 
+      frameborder="0" 
+      scrolling="no" 
+      src="https://www.twitch.tv/embed/NOME_DO_STREAMER/chat?parent=localhost">
+    </iframe>
+  </div>
+</div>
+    
+    <script src="./script.js"></script>
+  </body>
+</html>
